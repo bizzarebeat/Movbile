@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="il.ac.tcb.st.movbile.view.movies.MoviesFragment"
+        android:label="MoviesFragment">
+        <action
+        android:id="@+id/action_moviesFragment_to_movieFragment"
+        app:destination="@id/movieFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="il.ac.tcb.st.movbile.view.search.SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myListFragment"
+        android:name="il.ac.tcb.st.movbile.view.mylist.MyListFragment"
+        android:label="fragment_my_list"
+        tools:layout="@layout/fragment_my_list" >
+        <action
+            android:id="@+id/action_myListFragment_to_myListMoviesFragment"
+            app:destination="@id/myListMoviesFragment" />
+        <action
+            android:id="@+id/action_myListFragment_to_moviePreviewFragment"
+            app:destination="@id/moviePreviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="il.ac.tcb.st.movbile.view.movie.MovieFragment"
+        tools:layout="@layout/fragment_movie">
+        <action
+            android:id="@+id/action_movieFragment_to_moviesFragment"
+            app:popUpTo="@id/moviesFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchMoviesFragment"
+        android:name="il.ac.tcb.st.movbile.view.searchmovies.SearchMoviesFragment"
+        tools:layout="@layout/fragment_movies">
+        <action
+            android:id="@+id/action_searchMoviesFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myListMoviesFragment"
+        android:name="il.ac.tcb.st.movbile.view.mylistmovies.MyListMoviesFragment"
+        android:label="MyListMoviesFragment" >
+        <action
+            android:id="@+id/action_myListMoviesFragment_to_moviePreviewFragment"
+            app:destination="@id/moviePreviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviePreviewFragment"
+        android:name="il.ac.tcb.st.movbile.view.preview.MoviePreviewFragment"
+        android:label="MoviePreviewFragment" />
+
+
+</navigation>
